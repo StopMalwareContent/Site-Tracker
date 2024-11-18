@@ -24,10 +24,19 @@ jobs:
     steps:
       - uses: tiangolo/issue-manager@0.5.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          config: >-
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: |
             {
-              "accepted": {"delay": 0, "message": "🎉 Your request was accepted, thank you for contributing!"},
-              "duplicate": {"delay": 0, "message": "⚠️ Your request has been removed for being a duplicate, next time please check if the domain/bug that you want to report was not already reported before creating a new one."},
-              "rejected": {"delay": 0, "message": "🚫 Your request was denied, please don't open an issue with the same domain/bug again! If you think there was an error, comment below and the issue will be reviewed again."}
+              "accepted": {
+                "delay": 0,
+                "message": "🎉 Your request was accepted, thank you for contributing!"
+              },
+              "duplicate": {
+                "delay": 0,
+                "message": "⚠️ Your request has been removed for being a duplicate, next time please check if the domain/bug that you want to report was not already reported before creating a new one."
+              },
+              "rejected": {
+                "delay": 0,
+                "message": "🚫 Your request was denied, please don't open an issue with the same domain/bug again! If you think there was an error, comment below and the issue will be reviewed again."
+              }
             }
